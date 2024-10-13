@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Register.Register"
+             Title="Register">
+    <VerticalStackLayout Padding="10" Spacing="4" >
+
+        <Label Text="Register Form" 
+            FontSize="Subtitle" 
+            FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            />
+
+    <!--Name-->
+        <Label 
+            Text="Name" 
+            FontAttributes="Bold"
+            FontSize="12"/>  
+        <Entry 
+            x:Name="EntryName" 
+            TextColor="Black" 
+            BackgroundColor="AntiqueWhite" 
+            Placeholder="Entry Your Name"/>
+        
+    <!--Email-->
+        <Label 
+            Text="Email" 
+            FontAttributes="Bold" 
+            FontSize="12"/>
+        <Entry 
+            x:Name="EntryEmail" 
+            TextColor="Black" 
+            BackgroundColor="AntiqueWhite" 
+            Placeholder="Entry Your Email"/>
+
+    <!--Date-->
+        <Label 
+            Text="Date of Birth" 
+            FontAttributes="Bold"
+            FontSize="12"></Label>
+        <DatePicker 
+            x:Name="DatePicker" 
+            DateSelected="DatePicker_DateSelected"
+            FontSize="12"></DatePicker>
+        <Label 
+            x:Name="SelectDateLabel" 
+            Text="No date select"
+            FontSize="12"></Label>
+
+    <!--Gender-->
+        <Label 
+            Text="Gender" 
+            FontAttributes="Bold"
+            FontSize="12"></Label>
+        <HorizontalStackLayout Spacing="20">
+            <RadioButton 
+                x:Name ="M"
+                GroupName="Gender" Content="Male" 
+                FontSize="10" Value="Male"/>
+            <RadioButton 
+                x:Name ="F"
+                GroupName="Gender" Content="Female" 
+                FontSize="10" Value="Female"/>
+        </HorizontalStackLayout>
+        
+     <!--Agree-->
+        <Label 
+            Text="Agree to Terms and Conditions" 
+            FontAttributes="Bold"
+            FontSize="10"/>
+            <Switch 
+                x:Name="SwitchControl" 
+                Toggled="Switch_Toggled"/>
+        <Label
+            x:Name="SwitchValue" Text="No"/>
+
+     <!--Experience-->
+        <Label 
+            Text="Experience(years)" 
+            FontAttributes="Bold"
+            FontSize="12"/>
+        <VerticalStackLayout>
+            <Slider 
+                x:Name="SliderControl" 
+                Minimum="0" 
+                Maximum="20" 
+                ValueChanged="Slider_ValueChanged"/>
+            <Label 
+                x:Name="experience" 
+                FontSize="12"/>
+        </VerticalStackLayout>
+
+     <!--Depedents-->
+        <Label 
+            Text="Number of Dependents"
+            FontAttributes="Bold"
+            FontSize="12"/>
+        <Stepper 
+            x:Name="StepperControl" 
+            Minimum="0" 
+            Maximum="10" 
+            ValueChanged="StepperControl_ValueChanged"/>
+        <Label 
+            x:Name="StepperValueLabel" 
+            FontSize="10"/>
+
+     <!--Submit-->
+        <Button 
+            Text ="Register" 
+            Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
