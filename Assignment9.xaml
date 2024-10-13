@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment9.Assignment9"
+             Title="Assignment9"
+             BackgroundColor="#F5DAD2">
+    <VerticalStackLayout Padding="20" Spacing="7">
+        <HorizontalStackLayout Spacing="210">
+            <!--BMI Calculator-->
+            <Label 
+                Text="BMI Calculator"
+                TextColor="#FF356351"
+                FontAttributes ="Bold"
+                FontSize="30"/>
+        </HorizontalStackLayout>  
+       
+    <!--Gender-->
+       
+      <HorizontalStackLayout Spacing="5">
+            <Button
+                x:Name="Male"
+                Text="ชาย"
+                TextColor="Black"
+                BackgroundColor="White" 
+                WidthRequest="150"
+                Clicked="Male_Clicked"
+                />
+            <Button
+                x:Name="Female"
+                TextColor="Black"
+                Text="หญิง" 
+                BackgroundColor="White" 
+                WidthRequest="150"
+                Clicked="Female_Clicked"/>
+        </HorizontalStackLayout>
+    <!--Age-->
+        <Label 
+            Text="อายุ"
+            TextColor="#FF356351"
+            FontAttributes ="Bold"
+            FontSize="16" />  
+        <HorizontalStackLayout>
+            <Entry
+                x:Name="EntryAge"
+                TextColor="Black" 
+                BackgroundColor="White" 
+                Placeholder="ปี"
+                WidthRequest="310"
+                HorizontalTextAlignment="End"/>
+        </HorizontalStackLayout>
+        
+    <!--HeightandWeight-->
+        <HorizontalStackLayout Spacing="110">
+            <Label 
+                Text="ส่วนสูง"
+                TextColor="#FF356351"
+                FontAttributes ="Bold"
+                FontSize="16"/>  
+            <Label 
+                Text="น้ำหนัก"
+                TextColor="#FF356351"
+                FontAttributes ="Bold"
+                FontSize="16"/> 
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Entry
+                x:Name="EntryHeight"
+                TextColor="Black" 
+                BackgroundColor="White" 
+                Placeholder="ซม."
+                HorizontalTextAlignment="End"
+                WidthRequest="155"/>
+            
+            <Entry
+                x:Name="EntryWeight"
+                TextColor="Black" 
+                BackgroundColor="White" 
+                Placeholder="กก."
+                HorizontalTextAlignment="End"
+                WidthRequest="155"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Button 
+                x:Name="Calculate"
+                Text="คำนวณ"
+                TextColor="White"
+                FontAttributes="Bold"
+                BackgroundColor="#75A47F"
+                HorizontalOptions="Center"
+                WidthRequest="310"
+                Clicked="Calculate_Clicked"/>     
+        </HorizontalStackLayout>
+
+
+        <!--BMI Result-->
+        <VerticalStackLayout Padding="10" Spacing="5">
+            <Label
+                Text="ดัชนีมวลกาย (BMI)"
+                TextColor="#FF356351"
+                FontAttributes="Bold"
+                FontSize="24"/>
+            <HorizontalStackLayout Spacing="40">
+                <Label
+                    Text="น้ำหนักต่ำกว่าเกณฑ์"
+                    TextColor="#FF356351"
+                    FontSize="12"
+                    FontAttributes="Bold"/>
+                <Label
+                    Text="น้ำหนักปกติ"
+                    TextColor="#FF356351"
+                    FontSize="12"
+                    FontAttributes="Bold"/>
+                <Label
+                    Text="น้ำหนักเกิน"
+                    TextColor="#FF356351"
+                    FontSize="12"
+                    FontAttributes="Bold"/>
+                <Label
+                    Text="อ้วน"
+                    TextColor="#FF356351"
+                    FontSize="12"
+                    FontAttributes="Bold"/>
+                
+            </HorizontalStackLayout>
+            <ProgressBar
+                x:Name="BMIstandardBar"
+                Progress="0"
+                ProgressColor="#FFFC9AB9"
+                WidthRequest="380"
+                HeightRequest="20"
+                HorizontalOptions="Start"/>
+            <Label
+                x:Name="UserBMI"
+                Text="ดัชนีมวลกาย(BMI):"
+                TextColor="#FF356351"
+                FontSize="14"
+                FontAttributes="Bold"/>
+            <Label
+                x:Name="UserType"
+                Text="หมวดหมู่ BMI:"
+                TextColor="#FF356351"
+                FontSize="14"
+                FontAttributes="Bold"/>
+            <Label
+                x:Name="Range"
+                Text="ช่วง BMI ที่เหมาะสม:"
+                TextColor="#FF356351"
+                FontSize="14"
+                FontAttributes="Bold"/> 
+            <Label
+                x:Name="IdealWeightUser"
+                Text="น้ำหนักที่เหมาะสมกับความสูง:"
+                TextColor="#FF356351"
+                FontSize="14"
+                FontAttributes="Bold"/> 
+            <Label
+                x:Name="PonderalUser"
+                Text="ดัชนี Ponderal:"
+                TextColor="#FF356351"
+                FontSize="14"
+                FontAttributes="Bold"/> 
+            <Label
+                x:Name="AdviceUser"
+                Text="คำแนะนำ:"
+                TextColor="#FF356351"
+                FontSize="14"
+                FontAttributes="Bold"/> 
+        </VerticalStackLayout>
+      
+    </VerticalStackLayout>
+</ContentPage>
